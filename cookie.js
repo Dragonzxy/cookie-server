@@ -17,4 +17,4 @@ const cookieSchema = new mongoose.Schema({
   }
 });
 
-module.exports = mongoose.model('Cookie', cookieSchema);
+export default mongoose.model('Cookie', cookieSchema);

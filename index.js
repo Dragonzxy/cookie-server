@@ -2,17 +2,15 @@ import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import Cookie from './cookie.js';
+import connectDB from './database.js';
 
 const app = express();
-const PORT = 5000 || process.env.PORT;
+const PORT = process.env.PORT || 5000;
 
-app.use(bodyParser.json());
+app.use(express.json());
 app.use(cors());
 
-mongoose.connect('mongodb://127.0.0.1:27017/cookieDB', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-})
+connectDB()
 .then(() => console.log('MongoDB connected'))
 .catch(err => console.error(err));
 
