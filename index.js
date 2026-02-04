@@ -8,9 +8,8 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 app.use(express.json());
-app.use(cors({
-  origin: ["chrome-extension://ajgljojgkknncdbcihhghdlaeifbdhba"]
-}));
+app.use(cors()); // allow all origins
+
 
 
 connectDB()

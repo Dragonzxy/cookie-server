@@ -11,6 +11,7 @@ const cookieSchema = new mongoose.Schema({
   secure: Boolean,
   httpOnly: Boolean,
   sameSite: String,
+  
   createdAt: {
     type: Date,
     default: Date.now
